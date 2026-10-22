@@ -7,13 +7,13 @@
 
 | Equipo que eligieron | Texto | Palabra objetivo |
 |---|---|---|
-| | | |
+| Grupo 9 | `cifrado_grupo9.bin` (2,168 bytes cifrados en DES, publicado en Base64 en el foro) | computación paralela y distribuida |
 
 | Log de tiempo y speedup |
 |---|
-| T_s (tiempo local, 1 máquina, N procesos) = _____ |
-| Llave encontrada = _____ |
-| ¿Texto plano se recuperó correctamente? Sí / No |
+| T_s (tiempo local, 1 máquina, N procesos) = **42.90 s** ($N=1$, 1 proceso en local) |
+| Llave encontrada = **3141592** |
+| ¿Texto plano se recuperó correctamente? **Sí** (texto de 352 palabras recuperado íntegramente) |
 
 ## IV. Virtualización del Entorno: Preparación con Docker
 
