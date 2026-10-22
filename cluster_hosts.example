@@ -1,0 +1,14 @@
+# Plantilla de hostfile -- copien esto a "cluster_hosts" y reemplacen las
+# IPs por las que les asigne el router hoy (ipconfig getifaddr en0 / en1,
+# o revisen la interfaz de administracion del router).
+#
+# slots = nucleos logicos FISICOS de esa maquina. En macOS:
+#   sysctl -n hw.logicalcpu
+# max_slots = mismo numero, para que OpenMPI NO permita oversubscribe
+# (ver seccion VI.4 del enunciado: si meten mas procesos que nucleos
+# reales, el context-switching destruye el rendimiento).
+#
+# Ejemplo con 3 maquinas (ajustar IP y slots reales de cada quien):
+192.168.1.10 slots=4 max_slots=4   # Nodo Maestro
+192.168.1.11 slots=4 max_slots=4   # Nodo Worker 1
+192.168.1.12 slots=4 max_slots=4   # Nodo Worker 2

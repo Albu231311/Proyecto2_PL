@@ -1,0 +1,4 @@
+bruteforce
+*.o
+*.bin
+.DS_Store
