@@ -194,7 +194,6 @@ int main(int argc, char *argv[]) {
 
   MPI_Irecv(&found, 1, MPI_LONG, MPI_ANY_SOURCE, MPI_ANY_TAG, comm, &req);
 
-  MPI_Barrier(comm);
   double t_start = MPI_Wtime();
 
   for (long i = mylower; i < myupper; ++i) {
@@ -205,15 +204,17 @@ int main(int argc, char *argv[]) {
     if (tryKey(i, cipher, ciphlen)) {
       found = i;
       printf("Process %d found the key\n", id);
+      fflush(stdout);
       for (int node = 0; node < N; node++) {
-        MPI_Send(&found, 1, MPI_LONG, node, 0, comm);
+        if (node != id) {
+          MPI_Request sreq;
+          MPI_Isend(&found, 1, MPI_LONG, node, 0, comm, &sreq);
+        }
       }
       break;
     }
   }
 
-  MPI_Wait(&req, &st);
-  MPI_Barrier(comm);
   double t_end = MPI_Wtime();
   double elapsed = t_end - t_start;
 
@@ -223,7 +224,8 @@ int main(int argc, char *argv[]) {
     printf("Key = %li\n", found);
     printf("Tiempo de busqueda: %.6f segundos\n\n", elapsed);
     printf("%s\n", cipher);
+    fflush(stdout);
   }
 
-  MPI_Finalize();
+  MPI_Abort(comm, 0);
 }

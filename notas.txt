@@ -1,0 +1,13 @@
+IP (maestro) : 172.20.10.2
+Ip Camila (worker1):172.20.10.5
+Ip Marinés (worker2): 172.20.10.6
+
+
+=== RESULTADOS FINALES CLUSTER DISTRIBUIDO (12 SLOTS) ===
+Llave encontrada: 3141592
+Tiempo de busqueda cluster: 50.729352 segundos
+Tiempo local 1 core (Ts): 42.905149 segundos
+Speedup cluster: 0.8458x (~0.85x)
+Eficiencia: 7.05%
+Texto recuperado: 352 palabras (Grupo 9)
+Palabra objetivo: "computación paralela y distribuida"
