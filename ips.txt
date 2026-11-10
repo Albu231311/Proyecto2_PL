@@ -1,0 +1,6 @@
+IP (carlitos_maestro): 100.115.39.25
+IP (cami): 100.106.125.75
+IP (marines): 100.82.62.97
+IP (bran): 100.83.204.40
+IP (anggie): 100.80.207.53
+IP (iris): 100.73.26.112

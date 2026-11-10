@@ -1,4 +1,6 @@
 bruteforce
+bruteforce_mw
 *.o
+*.so
 *.bin
 .DS_Store
